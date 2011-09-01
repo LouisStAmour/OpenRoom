@@ -1,3 +1,4 @@
+<div id="roomdetails"></div>
 <script language="javascript" type="text/javascript">
 	function getScrollXY() {
 		var scrOfX = 0, scrOfY = 0;
@@ -27,4 +28,3 @@
 		roomDetails.style.top = staticy +"px";
 	}
 </script>
-<div id="roomdetails"></div>

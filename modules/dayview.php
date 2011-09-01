@@ -1,6 +1,8 @@
 <?php
 $optionalfieldsarraytemp = mysql_query("SELECT * FROM optionalfields ORDER BY optionorder ASC;");
 ?>
+<div id="popup"></div>
+<div id="dayviewModule"></div>
 <script language="javascript" type="text/javascript">
 	//findPos(object)
 	//Returns position of object for use with dayview popup
@@ -182,5 +184,3 @@ $optionalfieldsarraytemp = mysql_query("SELECT * FROM optionalfields ORDER BY op
 		xmlhttp.send(params);
 	}
 </script>
-<div id="popup"></div>
-<div id="dayviewModule"></div>

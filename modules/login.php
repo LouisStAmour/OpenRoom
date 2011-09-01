@@ -1,3 +1,39 @@
+<div id="loginform">
+<form id="authentication" onsubmit="javascript:return false" action="">
+	<ul>
+		<li>
+			<ul id="loginusername">
+				<li>
+					<span id="loginusernamelabel">Username:</span>
+				</li>
+				<li>
+					<input alt="Enter Username" type="text" name="username" id="usernamefield" class="textfield" />
+				</li>
+			</ul>
+		</li>
+		<li>
+			<ul id="loginpassword">
+				<li>
+					<span id="loginpasswordlabel">Password:</span>
+				</li>
+				<li>
+					<input alt="Enter Password" type="password" name="password" id="passwordfield" class="textfield" />
+				</li>
+			</ul>
+		</li>
+		<li>
+			<input id="loginsubmitbutton" class="button" type="submit" value="Log In" onclick="javascript:ajaxAuthenticate()" /><br/>
+			<?php
+				if($settings["login_method"] == "normal"){
+					echo "<span class=\"registrationlink\"><a href=\"createaccount.php\">Create Account</a></span><br/><br/>";
+				}
+			?>
+		</li>
+	</ul>
+</form>
+<div id="errormessage"></div>
+</div>
+
 <script type="text/javascript">
 function ajaxAuthenticate(){
 		var xmlHttp;
@@ -54,39 +90,3 @@ function ajaxAuthenticate(){
 	window.onload = init;
 	
 </script>
-
-<div id="loginform">
-<form id="authentication" onsubmit="javascript:return false" action="">
-	<ul>
-		<li>
-			<ul id="loginusername">
-				<li>
-					<span id="loginusernamelabel">Username:</span>
-				</li>
-				<li>
-					<input alt="Enter Username" type="text" name="username" id="usernamefield" class="textfield" />
-				</li>
-			</ul>
-		</li>
-		<li>
-			<ul id="loginpassword">
-				<li>
-					<span id="loginpasswordlabel">Password:</span>
-				</li>
-				<li>
-					<input alt="Enter Password" type="password" name="password" id="passwordfield" class="textfield" />
-				</li>
-			</ul>
-		</li>
-		<li>
-			<input id="loginsubmitbutton" class="button" type="submit" value="Log In" onclick="javascript:ajaxAuthenticate()" /><br/>
-			<?php
-				if($settings["login_method"] == "normal"){
-					echo "<span class=\"registrationlink\"><a href=\"createaccount.php\">Create Account</a></span><br/><br/>";
-				}
-			?>
-		</li>
-	</ul>
-</form>
-<div id="errormessage"></div>
-</div>
