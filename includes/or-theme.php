@@ -1,5 +1,6 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+  session_start();
 
 /*
 *Simple Device Detection Script
@@ -18,7 +19,8 @@ $_SESSION["device"] = "";
 
 $isMobile = false;
 
-$op = strtolower($_SERVER['HTTP_X_OPERAMINI_PHONE']);
+if(isset($_SERVER['HTTP_X_OPERAMINI_PHONE']))
+  $op = strtolower($_SERVER['HTTP_X_OPERAMINI_PHONE']);
 $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 $ac = strtolower($_SERVER['HTTP_ACCEPT']);
 
