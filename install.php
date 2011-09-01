@@ -81,6 +81,11 @@ if($login_method == "ldap" && $errormsg == ""){
 		}else{
 			$errormsg .= "Unable to set LDAP Host.<br/><br/>";
 		}
+		if(mysql_query("UPDATE settings SET settingvalue='". $ldap_port ."' WHERE settingname = 'ldap_port';")){
+			$successmsg .= "LDAP Port set to ". $ldap_port ."!<br/><br/>";
+		}else{
+			$errormsg .= "Unable to set LDAP Port.<br/><br/>";
+		}
 		if(mysql_query("UPDATE settings SET settingvalue='". $ldap_baseDN ."' WHERE settingname = 'ldap_baseDN';")){
 			$successmsg .= "LDAP baseDN set to ". $ldap_baseDN ."!<br/><br/>";
 		}else{
@@ -104,6 +109,18 @@ if($email_filter != "" && $errormsg == ""){
 }else{
 	$successmsg .= "Email Filter not specified.<br/><br/>";
 }
+
+//$email_system = 'example@example.org';
+if($email_system != "" && $errormsg == ""){
+  if(mysql_query("UPDATE settings SET settingvalue='". $email_system ."' WHERE settingname = 'email_system';")){
+		$successmsg .= "Email from address set!<br/><br/>";
+	}else{
+		$errormsg .= "Unable to set Email from address.<br/><br/>";
+	}
+}else{
+	$successmsg .= "Email from address not specified.<br/><br/>";
+}
+
 
 //$interval = 30;
 if($interval != "" && $errormsg == ""){

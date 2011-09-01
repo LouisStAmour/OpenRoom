@@ -37,6 +37,7 @@ require_once("includes/or-dbinfo.php");
 */
 function AuthenticateUser($username, $password, $settings){
 	$Host = $settings["ldap_host"];
+	$Port = $settings['ldap_port'];
 	$BaseDN = $settings["ldap_baseDN"];
 	// check for empty username and password
 	if(empty($username) || empty($password))
@@ -44,7 +45,7 @@ function AuthenticateUser($username, $password, $settings){
 		throw new Exception("Username or password not supplied.", 0xb00b00);
 	}
 
-	$connection = @ldap_connect($Host);		// try to make a connection
+	$connection = @ldap_connect($Host, $Port);		// try to make a connection
 
 	// if a connection could not be made, throw an exception
 	if(!$connection)

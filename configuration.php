@@ -61,9 +61,11 @@ $login_method = "ldap";
 //LDAP Settings
 /*
 *$host contains the host name of your ldap server
+*$ldap_port contains the port the ldap server runs on
 *$baseDN contains the base dn settings for you ldap server
 */
 $ldap_host = "ldap.bsu.edu";
+$ldap_port = "389";
 $ldap_baseDN = "cn=users,dc=bsu,dc=edu";
 
 
@@ -81,6 +83,8 @@ $ldap_baseDN = "cn=users,dc=bsu,dc=edu";
 */
 $email_filter = array("bsu.edu");
 
+// Email 'from' address used in install only, saved in database.
+$email_system = 'example@example.org';
 
 
 //Interval
