@@ -1,5 +1,6 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+  session_start();
 /*
 *or-getdatarange.php(POST:fromrange,torange,ajax_indicator)
 *
@@ -78,7 +79,7 @@ if($ajax_indicator == "TRUE"){
 	header("content-type: text/xml");
 	echo $output;
 }
-elseif($onlychecking == "TRUE" || $onlychecking == "multireserve"){
+elseif(isset($onlychecking) && $onlychecking == "TRUE" || $onlychecking == "multireserve"){
 	echo $output;
 }
 else{
