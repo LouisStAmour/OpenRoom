@@ -19,6 +19,7 @@ $_SESSION["device"] = "";
 
 $isMobile = false;
 
+$op = '';
 if(isset($_SERVER['HTTP_X_OPERAMINI_PHONE']))
   $op = strtolower($_SERVER['HTTP_X_OPERAMINI_PHONE']);
 $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
