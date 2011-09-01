@@ -26,6 +26,8 @@
 			<?php
 				if($settings["login_method"] == "normal"){
 					echo "<span class=\"registrationlink\"><a href=\"createaccount.php\">Create Account</a></span><br/><br/>";
+				} else {
+				  echo "<span><em>Please enter your University login name and password</em></span>";
 				}
 			?>
 		</li>
