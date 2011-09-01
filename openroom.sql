@@ -230,6 +230,7 @@ INSERT INTO `settings` (`settingname`, `settingvalue`) VALUES
 ('instance_url', ''),
 ('interval', '30'),
 ('ldap_baseDN', ''),
+('ldap_port', ''),
 ('ldap_host', ''),
 ('limit_duration', '240'),
 ('limit_frequency', 'a:2:{i:0;s:1:"0";i:1;s:3:"day";}'),
