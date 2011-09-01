@@ -4,14 +4,11 @@
 	include("includes/or-theme.php");
 	
 	//Check for and enforce SSL
-	if($settings["https"] == "true" && $_COOKIE["redirected"] != "true"){
-		setcookie("redirected", "true");
+	// NB Should put server-port in configuration.php GS
+	if($settings["https"] == "true" && $_SERVER["SERVER_PORT"] != "443"){
 		header("HTTP/1.1 301 Moved Permanently");
 		header("Location: https://". $settings["instance_url"]);
 		exit();
-	}
-	if($_COOKIE["redirected"] == "true"){
-		setcookie("redirected", "false");
 	}
 	
 	include($_SESSION["themepath"] ."header.php");
